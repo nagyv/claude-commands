@@ -1,8 +1,4 @@
-<!-- Based on a version from https://github.com/snarktank/ai-dev-tasks - Apache 2.0 license - 2025 June -->
-
-## Goal
-
-To guide an AI assistant in creating a detailed Product Requirements Document (PRD) in Markdown format, based on an initial user prompt. The PRD should be clear, actionable, and suitable for a junior developer to understand and implement the feature.
+Create a detailed Product Requirements Document (PRD) in Markdown format, based on an initial user prompt. The PRD should be clear, actionable, and suitable for a junior developer to understand and implement the feature.
 
 ## Process
 
@@ -54,3 +50,5 @@ Assume the primary reader of the PRD is a **junior developer**. Therefore, requi
 1. Do NOT start implementing the PRD
 2. Make sure to ask the user clarifying questions
 3. Take the user's answers to the clarifying questions and improve the PRD
+
+<!-- Based on a version from https://github.com/snarktank/ai-dev-tasks - Apache 2.0 license - 2025 June -->
