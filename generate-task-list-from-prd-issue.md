@@ -14,7 +14,7 @@ Create a detailed, step-by-step task list in Markdown format based on an existin
 5.  **Phase 2: Generate Sub-Tasks:** Once the user confirms, break down each parent task into smaller, actionable sub-tasks necessary to complete the parent task. Ensure sub-tasks logically follow from the parent task and cover the implementation details implied by the PRD.
 6.  **Identify Relevant Files:** Based on the tasks and PRD, identify potential files that will need to be created or modified. List these under the `Relevant Files` section, including corresponding test files if applicable.
 7.  **Generate Final Output:** Combine the parent tasks, sub-tasks, relevant files, and notes into the final Markdown structure.
-8.  **Save Task List:** Save the generated document as the description of a new GitHub issue. Connect the new issue as a sub-issue to the PRD issue.
+8.  **Save Task List:** Save the generated document as the description of a new GitHub issue. Connect the new issue as a sub-issue to the PRD issue $ARGUMENTS.
 
 ## Output Format
 
@@ -55,6 +55,6 @@ Assume the primary reader of the task list is a **junior developer** who will im
 
 ## PRD Reference
 
-The PRD is available at $ARGUMENTS
+The PRD is available at GitHub issue $ARGUMENTS
 
 <!-- Originally from https://github.com/snarktank/ai-dev-tasks - Apache 2.0 license -->
