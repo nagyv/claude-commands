@@ -1,4 +1,4 @@
-<!-- Originally from https://github.com/snarktank/ai-dev-tasks - Apache 2.0 license -->
+<!-- Based on a version from https://github.com/snarktank/ai-dev-tasks - Apache 2.0 license - 2025 June -->
 
 ## Goal
 
@@ -7,7 +7,6 @@ To guide an AI assistant in creating a detailed Product Requirements Document (P
 ## Process
 
 1.  **Receive Initial Prompt:** The user provided a brief description or request for a new feature or functionality: $ARGUMENTS
-2.  **Use additional context:** Use additional context from `/prompts/v0_instructions.md` on to of the user provided description.
 3.  **Ask Clarifying Questions:** Before writing the PRD, the AI *must* ask clarifying questions to gather sufficient detail. The goal is to understand the "what" and "why" of the feature, not necessarily the "how" (which the developer will figure out).
 4.  **Generate PRD:** Based on the initial prompt and the user's answers to the clarifying questions, generate a PRD using the structure outlined below.
 5.  **Save PRD:** Save the generated document as `prd-[feature-name].md` inside the `/prompts` directory.
