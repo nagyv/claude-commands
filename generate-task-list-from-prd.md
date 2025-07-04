@@ -3,8 +3,7 @@ Create a detailed, step-by-step task list in Markdown format based on an existin
 ## Output
 
 - **Format:** Markdown (`.md`)
-- **Location:** `/tasks/`
-- **Filename:** `tasks-[prd-file-name].md` (e.g., `tasks-prd-user-profile-editing.md`)
+- **Location:** New GitHub issues added as sub-issues to the initial PRD issue
 
 ## Process
 
