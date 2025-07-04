@@ -42,8 +42,7 @@ Assume the primary reader of the PRD is a **junior developer**. Therefore, requi
 ## Output
 
 *   **Format:** Markdown (`.md`)
-*   **Location:** `/prompts/`
-*   **Filename:** `prd-[feature-name].md`
+*   **Location:** Update existing GitHub issue description or create new one
 
 ## Final instructions
 
