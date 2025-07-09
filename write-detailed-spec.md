@@ -2,10 +2,10 @@ Create a detailed Product Requirements Document (PRD) in Markdown format, based 
 
 ## Process
 
-1.  **Receive Initial Prompt:** The user provided a brief description or request for a new feature or functionality: $ARGUMENTS
+1.  **Receive Initial Prompt:** The user provided a brief description or request for a new feature or functionality in GitHub issue $ARGUMENTS
 3.  **Ask Clarifying Questions:** Before writing the PRD, the AI *must* ask clarifying questions to gather sufficient detail. The goal is to understand the "what" and "why" of the feature, not necessarily the "how" (which the developer will figure out).
 4.  **Generate PRD:** Based on the initial prompt and the user's answers to the clarifying questions, generate a PRD using the structure outlined below.
-5.  **Save PRD:** Save the generated document as `prd-[feature-name].md` inside the `/prompts` directory.
+5.  **Save PRD:** Update the description of the GitHub issue $ARGUMENTS with the generated PRD content.
 
 ## Clarifying Questions (Examples)
 
@@ -41,7 +41,7 @@ Assume the primary reader of the PRD is a **junior developer**. Therefore, requi
 
 ## Output
 
-*   **Format:** Markdown (`.md`)
+*   **Format:** Markdown
 *   **Location:** Update existing GitHub issue description or create new one
 
 ## Final instructions
