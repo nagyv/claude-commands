@@ -14,7 +14,7 @@ Create a detailed, step-by-step task list in Markdown format based on an existin
 5.  **Phase 2: Generate Sub-Tasks:** Once the user confirms, break down each parent task into smaller, actionable sub-tasks necessary to complete the parent task. Ensure sub-tasks logically follow from the parent task and cover the implementation details implied by the PRD.
 6.  **Identify Relevant Files:** Based on the tasks and PRD, identify potential files that will need to be created or modified. List these under the `Relevant Files` section, including corresponding test files if applicable.
 7.  **Generate Final Output:** Combine the parent tasks, sub-tasks, relevant files, and notes into the final Markdown structure.
-8.  **Save Task List:** Save the generated tasks as new GitHub sub-issues of the PRD issue.
+8.  **Save Task List:** Save the generated tasks as new GitHub sub-issues of the PRD issue. Make sure that the tasks are assigned the same project that the PRD issue belongs to.
 
 ## Output Format
 
