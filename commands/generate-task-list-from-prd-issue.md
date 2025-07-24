@@ -1,9 +1,9 @@
-Create a detailed, step-by-step task list in Markdown format based on an existing Product Requirements Document (PRD). The task list should guide a developer through implementation.
+Create a detailed, step-by-step task list in Markdown format based on an existing Product Requirements Document (PRD) in GitHub issue $ARGUMENTS. The task list should guide a developer through implementation.
 
 ## Output
 
 - **Format:** Markdown (`.md`)
-- **Location:** New GitHub issues added as sub-issues to the initial PRD issue
+- **Location:** New GitHub issues added as sub-issues to the initial PRD issue; use the `--project` flag to add the issues to the same project as $ARGUMENTS
 
 ## Process
 
