@@ -5,29 +5,55 @@ Create a detailed, step-by-step task list in Markdown format based on an existin
 - **Format:** Markdown (`.md`)
 - **Location:** New GitHub issues added as sub-issues to the initial PRD issue; use the `--project` flag to add the issues to the same project as $ARGUMENTS
 
+**Hint:** Get the PRD issue ID and related project ID using:
+
+```
+# Get GraphQL IDs  
+gh api graphql -f query='query($owner: String!, $repo: String!, $number: Int!) {
+  repository(owner: $owner, name: $repo) {
+    issue(number: $number) {
+      id,
+      projectItems(first: 10) {
+        nodes {
+          id
+          project {
+            id
+            title
+            number
+          }
+        }
+      }
+    }
+  }
+}' -f owner='<owner>' -f repo='<repo name>' -F number=<issue number>
+```
+
 ## Process
 
 1.  **Receive PRD Reference:** The user points the AI to a specific PRD issue
-2.  **Analyze PRD:** The AI reads and analyzes the functional requirements, user stories, and other sections of the specified PRD.
-3.  **Phase 1: Generate Parent Tasks:** Based on the PRD analysis, create the issues and generate the main, high-level tasks required to implement the feature. Use your judgement on how many high-level tasks to use. It's likely to be about 5. Present these tasks to the user in the specified format (without sub-tasks yet). Inform the user: "I have generated the high-level tasks based on the PRD. Ready to generate the sub-tasks? Respond with 'Go' to proceed."
+2.  **Analyze PRD:** The AI reads and analyzes the functional requirements, user stories, milestones, and other sections of the specified PRD.
+3.  **Phase 1: Generate Parent Tasks:** Based on the PRD analysis, create the issues and generate the main, high-level tasks required to implement the feature. Use your judgement on how many high-level tasks to use informed by the milestones from the PRD. It's likely to be about 3-7. Present these tasks to the user in the specified format (without sub-tasks yet). Inform the user: "I have generated the high-level tasks based on the PRD. Ready to generate the sub-tasks? Respond with 'Go' to proceed."
 4.  **Wait for Confirmation:** Pause and wait for the user to respond with "Go".
 5.  **Phase 2: Generate Sub-Tasks:** Once the user confirms, break down each parent task into smaller, actionable sub-tasks necessary to complete the parent task. Ensure sub-tasks logically follow from the parent task and cover the implementation details implied by the PRD.
 6.  **Identify Relevant Files:** Based on the tasks and PRD, identify potential files that will need to be created or modified. List these under the `Relevant Files` section, including corresponding test files if applicable.
 7.  **Generate Final Output:** Combine the parent tasks, sub-tasks, relevant files, and notes into the final Markdown structure.
-8.  **Save Task List:** Save the generated tasks as new GitHub sub-issues of the PRD issue. Make sure that the tasks are assigned the same project that the PRD issue belongs to.
+8.  **Save Task List:** Save the generated tasks as new GitHub issues. Make sure that the tasks are assigned the same project that the PRD issue belongs to.
 9.  **Add tasks as sub-issues** Mark the generated issues as being sub-issues of $ARGUMENTS. Use the following calls replacing the arguments as needed:
    ```
-   # Get GraphQL IDs  
-   gh api graphql --header 'X-Github-Next-Global-ID:1' -f query='
-   { repository(owner: "OWNER", name: "REPO") { 
-       issue(number: PARENT_NUM) { id }
-   }}'
-   
+   # Get Child issue GraphQL IDs  
+   gh api graphql -f query='query($owner: String!, $repo: String!, $number: Int!) {
+     repository(owner: $owner, name: $repo) {
+       issue(number: $number) {
+         id
+       }
+     }
+   }' -f owner='<owner>' -f repo='<repo name>' -F number=<issue number>
+
    # Add sub-issue relationship
-   gh api graphql --header 'X-Github-Next-Global-ID:1' -f query='
+   gh api graphql -f query='
    mutation { addSubIssue(input: {
-     issueId: "PARENT_GraphQL_ID"
-     subIssueId: "CHILD_GraphQL_ID"
+     issueId: "<PRD issue graphql ID>"
+     subIssueId: "<Sub issue graphql ID>"
    }) { issue { id } subIssue { id } }}'
    ```
 
@@ -71,9 +97,5 @@ The process explicitly requires a pause after generating parent tasks to get use
 ## Target Audience
 
 Assume the primary reader of the task list is a **junior developer** who will implement the feature.
-
-## PRD Reference
-
-The PRD is available at GitHub issue $ARGUMENTS
 
 <!-- Originally from https://github.com/snarktank/ai-dev-tasks - Apache 2.0 license -->
