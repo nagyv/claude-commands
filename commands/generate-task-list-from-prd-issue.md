@@ -15,6 +15,21 @@ Create a detailed, step-by-step task list in Markdown format based on an existin
 6.  **Identify Relevant Files:** Based on the tasks and PRD, identify potential files that will need to be created or modified. List these under the `Relevant Files` section, including corresponding test files if applicable.
 7.  **Generate Final Output:** Combine the parent tasks, sub-tasks, relevant files, and notes into the final Markdown structure.
 8.  **Save Task List:** Save the generated tasks as new GitHub sub-issues of the PRD issue. Make sure that the tasks are assigned the same project that the PRD issue belongs to.
+9.  **Add tasks as sub-issues** Mark the generated issues as being sub-issues of $ARGUMENTS. Use the following calls replacing the arguments as needed:
+   ```
+   # Get GraphQL IDs  
+   gh api graphql --header 'X-Github-Next-Global-ID:1' -f query='
+   { repository(owner: "OWNER", name: "REPO") { 
+       issue(number: PARENT_NUM) { id }
+   }}'
+   
+   # Add sub-issue relationship
+   gh api graphql --header 'X-Github-Next-Global-ID:1' -f query='
+   mutation { addSubIssue(input: {
+     issueId: "PARENT_GraphQL_ID"
+     subIssueId: "CHILD_GraphQL_ID"
+   }) { issue { id } subIssue { id } }}'
+   ```
 
 ## Output Format
 
