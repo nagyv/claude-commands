@@ -3,9 +3,9 @@ Create a detailed, step-by-step task list in Markdown format based on an existin
 ## Output
 
 - **Format:** Markdown (`.md`)
-- **Location:** New GitHub issues added as sub-issues to the initial PRD issue; use the `--project` flag to add the issues to the same project as $ARGUMENTS
+- **Location:** New GitHub issues added as sub-issues to the initial PRD issue; use the `--project <project number>` flag to add the issues to the same project as $ARGUMENTS
 
-**Hint:** Get the PRD issue ID and related project ID using:
+**Hint:** Get the PRD issue ID and related project number using:
 
 ```
 # Get GraphQL IDs  
@@ -18,7 +18,6 @@ gh api graphql -f query='{
           id
           project {
             id
-            title
             number
           }
         }
