@@ -9,9 +9,9 @@ Create a detailed, step-by-step task list in Markdown format based on an existin
 
 ```
 # Get GraphQL IDs  
-gh api graphql -f query='query($owner: String!, $repo: String!, $number: Int!) {
-  repository(owner: $owner, name: $repo) {
-    issue(number: $number) {
+gh api graphql -f query='{
+  repository(owner: <owner>, name: <repo name>) {
+    issue(number: <issue number>) {
       id,
       projectItems(first: 10) {
         nodes {
@@ -25,7 +25,7 @@ gh api graphql -f query='query($owner: String!, $repo: String!, $number: Int!) {
       }
     }
   }
-}' -f owner='<owner>' -f repo='<repo name>' -F number=<issue number>
+}'
 ```
 
 ## Process
@@ -41,20 +41,20 @@ gh api graphql -f query='query($owner: String!, $repo: String!, $number: Int!) {
 9.  **Add tasks as sub-issues** Mark the generated issues as being sub-issues of $ARGUMENTS. Use the following calls replacing the arguments as needed:
    ```
    # Get Child issue GraphQL IDs  
-   gh api graphql -f query='query($owner: String!, $repo: String!, $number: Int!) {
-     repository(owner: $owner, name: $repo) {
-       issue(number: $number) {
+   gh api graphql -f query='{
+     repository(owner: <owner>, name: <repo name>) {
+       issue(number: <issue number>) {
          id
        }
      }
-   }' -f owner='<owner>' -f repo='<repo name>' -F number=<issue number>
+   }'
 
    # Add sub-issue relationship
    gh api graphql -f query='
    mutation { addSubIssue(input: {
      issueId: "<PRD issue graphql ID>"
      subIssueId: "<Sub issue graphql ID>"
-   }) { issue { id } subIssue { id } }}'
+   }) { issue { id, url } subIssue { id, url } }}'
    ```
 
 ## Output Format
