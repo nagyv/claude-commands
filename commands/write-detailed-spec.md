@@ -28,12 +28,13 @@ The generated PRD should include the following sections:
 1.  **Introduction/Overview:** Briefly describe the feature and the problem it solves. State the goal.
 2.  **Goals:** List the specific, measurable objectives for this feature.
 3.  **User Stories:** Detail the user narratives describing feature usage and benefits.
-4.  **Functional Requirements:** List the specific functionalities the feature must have. Use clear, concise language (e.g., "The system must allow users to upload a profile picture."). Number these requirements.
-5.  **Non-Goals (Out of Scope):** Clearly state what this feature will *not* include to manage scope.
-6.  **Design Considerations (Optional):** Link to mockups, describe UI/UX requirements, or mention relevant components/styles if applicable.
-7.  **Technical Considerations (Optional):** Mention any known technical constraints, dependencies, or suggestions (e.g., "Should integrate with the existing Auth module").
-8.  **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase user engagement by 10%", "Reduce support tickets related to X").
-9.  **Open Questions:** List any remaining questions or areas needing further clarification.
+4.  **Milestones** Aim to deliver large ideas in multiple milestones. Every milestone should ship a meaningful valuable change for the user. List out the scope of each milestone. 
+5.  **Functional Requirements:** List the specific functionalities the feature must have. Use clear, concise language (e.g., "The system must allow users to upload a profile picture."). Number these requirements.
+6.  **Non-Goals (Out of Scope):** Clearly state what this feature will *not* include to manage scope.
+7.  **Design Considerations (Optional):** Link to mockups, describe UI/UX requirements, or mention relevant components/styles if applicable.
+8.  **Technical Considerations (Optional):** Mention any known technical constraints, dependencies, or suggestions (e.g., "Should integrate with the existing Auth module").
+9.  **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase user engagement by 10%", "Reduce support tickets related to X").
+10.  **Open Questions:** List any remaining questions or areas needing further clarification.
 
 ## Target Audience
 
