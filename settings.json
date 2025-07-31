@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PROJECT_DIR}/bin/save_user_prompt.py || (echo "Add "save_user_prompt.py" to 'project/bin' directory from https://github.com/nagyv/claude-commands" >&2 && exit 1)"
+            "command": "${CLAUDE_PROJECT_DIR}/bin/save_user_prompt.py || (echo "Add 'save_user_prompt.py' to 'project/bin' directory from https://github.com/nagyv/claude-commands" >&2 && exit 1)"
           }
         ]
       }
