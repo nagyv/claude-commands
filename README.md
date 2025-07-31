@@ -11,4 +11,4 @@ You might want to move back some files and directories from the backed up `.clau
 
 ## Hooks setup
 
-Copy the hook scripts (from `/hooks` under your `${CLAUDE_PROJECT_DIR}/bin/` folder.
+Copy the hook scripts (from `/hooks`) to your `${CLAUDE_PROJECT_DIR}/bin/` folder.
