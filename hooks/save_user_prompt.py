@@ -2,6 +2,14 @@
 """
 Claude Code Hook: UserPromptSubmit
 Saves user prompts to user_prompts.yaml file with timestamps
+
+Example output:
+
+user_prompts:
+  "2025-07-30 18:39": |
+     Here comes the sun
+  "2025-07-30 18:41": |
+     Little darling
 """
 import os
 import sys
