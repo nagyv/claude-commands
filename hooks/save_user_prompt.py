@@ -37,7 +37,7 @@ def main():
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
 
     # Define the YAML file path
-    yaml_file = Path("user_prompts.yaml")
+    yaml_file = Path(os.getenv("CLAUDE_PROJECT_DIR"), "user_prompts.yaml")
 
     # Load existing data or create new structure
     if yaml_file.exists():
