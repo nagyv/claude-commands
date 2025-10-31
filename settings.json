@@ -1,14 +1,56 @@
 {
-  "hooks": {
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PROJECT_DIR}/bin/save_user_prompt.py || (echo \"Add 'save_user_prompt.py' to 'project/bin' directory from https://github.com/nagyv/claude-commands\" >&2 && exit 1)"
-          }
-        ]
-      }
+  "permissions": {
+    "allow": [
+      "Bash(alembic current:*)",
+      "Bash(alembic history:*)",
+      "Bash(alembic upgrade:*)",
+      "Bash(devenv test:*)",
+      "Bash(direnv allow:*)",
+      "Bash(git add:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "Bash(git log:*)",
+      "Bash(git merge:*)",
+      "Bash(git pull:*)",
+      "Bash(git push:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git stash push:*)",
+      "Bash(git stash:*)",
+      "Bash(git worktree:*)",
+      "Bash(nix-shell:*)",
+      "Bash(pnpm audit:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm lint)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm run:*)",
+      "Bash(ruff check:*)",
+      "Bash(uv pip compile:*)",
+      "Bash(uv pip install:*)",
+      "Bash(uv run:*)",
+      "Bash(uv venv:*)",
+      "Bash(glab mr:*)",
+      "Bash(glab ci:*)",
+      "Bash(glab issue view:*)",
+      "Bash(git fetch:*)",
+      "Bash(git rebase:*)",
+      "mcp__ide__getDiagnostics",
+      "mcp__postgres__query",
+      "Skill(superpowers:brainstorming)",
+      "Skill(superpowers:finishing-a-development-branch)",
+      "Skill(superpowers:subagent-driven-development)",
+      "Skill(superpowers:systematic-debugging)",
+      "Skill(superpowers:using-git-worktrees)",
+      "Skill(superpowers:writing-plans)",
+      "Skill(superpowers:writing-skills)",
+      "Skill(superpowers:receiving-code-review)",
+      "WebFetch(domain:devenv.sh)",
+      "WebFetch(domain:docs.gitlab.com)"
     ]
-  }
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-marketplace": true,
+    "superpowers-chrome@superpowers-marketplace": true
+  },
+  "alwaysThinkingEnabled": false
 }
